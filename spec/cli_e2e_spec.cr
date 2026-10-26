@@ -10,11 +10,11 @@ describe "CLI e2e" do
     Dir.mkdir_p("/tmp/ccg-e2e")
     fake_geli = "/tmp/ccg-e2e/geli"
     File.write(fake_geli, <<-SH)
-    #!/bin/sh
-    # Fake geli — just exit 0; real geli would consume the keyfile.
-    echo "fake geli called: $@" >> /tmp/ccg-e2e/calls.log
-    exit 0
-    SH
+      #!/bin/sh
+      # Fake geli — just exit 0; real geli would consume the keyfile.
+      echo "fake geli called: $@" >> /tmp/ccg-e2e/calls.log
+      exit 0
+      SH
     File.chmod(fake_geli, 0o755)
     File.write("/tmp/ccg-e2e/calls.log", "")
 
